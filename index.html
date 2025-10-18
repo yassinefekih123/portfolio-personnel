@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio - Fekih Yassine</title>
+
+  <!-- SEO -->
+  <meta name="description" content="Portfolio professionnel de Fekih Yassine - Étudiant en Informatique et Développeur Web.">
+  <meta name="author" content="Fekih Yassine">
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <!-- AOS -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+  
+  <style>
+    :root {
+      --primary-color: #00d4ff;
+      --secondary-color: #0099ff;
+      --dark-bg: #0a0e27;
+      --card-bg: #151932;
+      --text-light: #e0e6ed;
+      --accent: #7c3aed;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: var(--dark-bg);
+      color: var(--text-light);
+      overflow-x: hidden;
+    }
+
+    /* Animated Background */
+    .animated-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 50%, #0a0e27 100%);
+      overflow: hidden;
+    }
+
+    .animated-bg::before {
+      content: '';
+      position: absolute;
+      width: 200%;
+      height: 200%;
+      background-image: 
+        repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0, 212, 255, 0.03) 2px, rgba(0, 212, 255, 0.03) 4px),
+        repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 212, 255, 0.03) 2px, rgba(0, 212, 255, 0.03) 4px);
+      animation: gridMove 20s linear infinite;
+    }
+
+    @keyframes gridMove {
+      0% { transform: translate(0, 0); }
+      100% { transform: translate(50px, 50px); }
+    }
+
+    .floating-shapes {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .shape {
+      position: absolute;
+      background: rgba(0, 212, 255, 0.05);
+      border-radius: 50%;
+      animation: float 20s infinite ease-in-out;
+    }
+
+    .shape:nth-child(1) { width: 80px; height: 80px; left: 10%; animation-delay: 0s; }
+    .shape:nth-child(2) { width: 60px; height: 60px; left: 50%; animation-delay: 2s; }
+    .shape:nth-child(3) { width: 100px; height: 100px; left: 80%; animation-delay: 4s; }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-100px) rotate(180deg); }
+    }
+
+    /* Preloader */
+    #preloader {
+      position: fixed;
+      background: var(--dark-bg);
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 2000;
+    }
+
+    .spinner {
+      width: 50px;
+      height: 50px;
+      border: 5px solid rgba(0, 212, 255, 0.2);
+      border-top: 5px solid var(--primary-color);
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* Navbar */
+    .navbar {
+      background: rgba(10, 14, 39, 0.95) !important;
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(0, 212, 255, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .navbar-brand {
+      color: var(--primary-color) !important;
+      font-weight: 700;
+      font-size: 1.5rem;
+      transition: transform 0.3s ease;
+    }
+
+    .navbar-brand:hover {
+      transform: scale(1.05);
+    }
+
+    .nav-link {
+      color: var(--text-light) !important;
+      margin: 0 0.5rem;
+      position: relative;
+      transition: color 0.3s ease;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 50%;
+      width: 0;
+      height: 2px;
+      background: var(--primary-color);
+      transition: all 0.3s ease;
+      transform: translateX(-50%);
+    }
+
+    .nav-link:hover::after,
+    .nav-link.active::after {
+      width: 80%;
+    }
+
+    .nav-link.active {
+      color: var(--primary-color) !important;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      border: none;
+      transition: all 0.3s ease;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 20px rgba(0, 212, 255, 0.4);
+    }
+
+    /* Hero Section */
+    #hero {
+      min-height: 100vh;
+      padding-top: 100px;
+      position: relative;
+    }
+
+    .hero-img {
+      width: 180px;
+      height: 180px;
+      object-fit: cover;
+      border: 4px solid var(--primary-color);
+      box-shadow: 0 0 30px rgba(0, 212, 255, 0.5);
+      transition: all 0.3s ease;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    .hero-img:hover {
+      transform: scale(1.1) rotate(5deg);
+      box-shadow: 0 0 50px rgba(0, 212, 255, 0.8);
+    }
+
+    #hero h1 {
+      font-size: 3rem;
+      margin-top: 2rem;
+    }
+
+    .text-primary {
+      color: var(--primary-color) !important;
+      background: linear-gradient(135deg, var(--primary-color), var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .social-icon {
+      display: inline-flex;
+      width: 50px;
+      height: 50px;
+      background: var(--card-bg);
+      color: var(--primary-color);
+      border-radius: 50%;
+      align-items: center;
+      justify-content: center;
+      margin: 0 0.5rem;
+      font-size: 1.3rem;
+      transition: all 0.3s ease;
+      border: 2px solid transparent;
+    }
+
+    .social-icon:hover {
+      background: var(--primary-color);
+      color: var(--dark-bg);
+      transform: translateY(-5px) rotate(360deg);
+      border-color: var(--primary-color);
+      box-shadow: 0 5px 20px rgba(0, 212, 255, 0.4);
+    }
+
+    /* Sections */
+    section {
+      padding: 80px 0;
+      position: relative;
+    }
+
+    .bg-light {
+      background: var(--card-bg) !important;
+    }
+
+    h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 3rem;
+      position: relative;
+      display: inline-block;
+    }
+
+    h2::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 4px;
+      background: linear-gradient(90deg, var(--primary-color), var(--accent));
+      border-radius: 2px;
+    }
+
+    /* Tech Logos */
+    .tech-logos {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .tech-logo {
+      width: 70px;
+      height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--card-bg);
+      border-radius: 15px;
+      transition: all 0.3s ease;
+      border: 2px solid rgba(0, 212, 255, 0.2);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .tech-logo::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(0, 212, 255, 0.3), transparent);
+      transition: left 0.5s ease;
+    }
+
+    .tech-logo:hover::before {
+      left: 100%;
+    }
+
+    .tech-logo:hover {
+      transform: translateY(-10px) scale(1.1);
+      border-color: var(--primary-color);
+      box-shadow: 0 10px 30px rgba(0, 212, 255, 0.3);
+    }
+
+    .tech-logo i {
+      font-size: 2.5rem;
+      transition: all 0.3s ease;
+    }
+
+    .tech-logo:hover i {
+      transform: rotate(360deg);
+    }
+
+    /* Skill Cards */
+    .skill-card {
+      background: var(--card-bg);
+      padding: 2rem;
+      border-radius: 15px;
+      transition: all 0.3s ease;
+      border: 2px solid rgba(0, 212, 255, 0.1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .skill-card::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(0, 212, 255, 0.1) 0%, transparent 70%);
+      transform: scale(0);
+      transition: transform 0.5s ease;
+    }
+
+    .skill-card:hover::before {
+      transform: scale(1);
+    }
+
+    .skill-card:hover {
+      transform: translateY(-10px);
+      border-color: var(--primary-color);
+      box-shadow: 0 10px 40px rgba(0, 212, 255, 0.3);
+    }
+
+    .skill-card i {
+      font-size: 3rem;
+      color: var(--primary-color);
+      margin-bottom: 1rem;
+      transition: transform 0.3s ease;
+    }
+
+    .skill-card:hover i {
+      transform: scale(1.2) rotateY(360deg);
+    }
+
+    /* Timeline */
+    .timeline {
+      position: relative;
+      max-width: 800px;
+      margin: auto;
+      padding: 2rem 0;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 20px;
+      top: 0;
+      height: 100%;
+      width: 3px;
+      background: linear-gradient(180deg, var(--primary-color), var(--accent));
+    }
+
+    .timeline-item {
+      display: flex;
+      position: relative;
+      margin-bottom: 40px;
+      padding-left: 60px;
+    }
+
+    .timeline-dot {
+      position: absolute;
+      left: 11px;
+      top: 10px;
+      width: 20px;
+      height: 20px;
+      background: var(--primary-color);
+      border-radius: 50%;
+      border: 3px solid var(--dark-bg);
+      box-shadow: 0 0 20px rgba(0, 212, 255, 0.6);
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+    }
+
+    .timeline-content {
+      background: var(--card-bg);
+      padding: 1.5rem;
+      border-radius: 15px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+      flex: 1;
+      border: 2px solid rgba(0, 212, 255, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .timeline-content:hover {
+      border-color: var(--primary-color);
+      transform: translateX(10px);
+      box-shadow: 0 10px 40px rgba(0, 212, 255, 0.3);
+    }
+
+    /* Contact Form */
+    .contact-card {
+      background: var(--card-bg);
+      border-radius: 20px;
+      border: 2px solid rgba(0, 212, 255, 0.2);
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    .form-control {
+      background: rgba(255, 255, 255, 0.05);
+      border: 2px solid rgba(0, 212, 255, 0.2);
+      color: var(--text-light);
+      padding: 0.8rem;
+      border-radius: 10px;
+      transition: all 0.3s ease;
+    }
+
+    .form-control:focus {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: var(--primary-color);
+      box-shadow: 0 0 20px rgba(0, 212, 255, 0.2);
+      color: var(--text-light);
+    }
+
+    .form-control::placeholder {
+      color: rgba(224, 230, 237, 0.5);
+    }
+
+    /* Footer */
+    footer {
+      background: var(--card-bg) !important;
+      border-top: 1px solid rgba(0, 212, 255, 0.2);
+      color: var(--text-light) !important;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      #hero h1 { font-size: 2rem; }
+      h2 { font-size: 1.8rem; }
+      .tech-logo { width: 60px; height: 60px; }
+      .tech-logo i { font-size: 2rem; }
+    }
+  </style>
+</head>
+<body data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="70" tabindex="0">
+
+  <!-- Animated Background -->
+  <div class="animated-bg">
+    <div class="floating-shapes">
+      <div class="shape"></div>
+      <div class="shape"></div>
+      <div class="shape"></div>
+    </div>
+  </div>
+
+  <!-- Preloader -->
+  <div id="preloader">
+    <div class="spinner"></div>
+  </div>
+
+  <!-- Navbar -->
+  <nav id="mainNav" class="navbar navbar-expand-lg fixed-top shadow-sm">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#">Yassine Fekih</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav align-items-center">
+          <li class="nav-item"><a class="nav-link active" href="#hero">Accueil</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">À propos</a></li>
+          <li class="nav-item"><a class="nav-link" href="#skills">Compétences</a></li>
+          <li class="nav-item"><a class="nav-link" href="#timeline">Parcours</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          <li class="nav-item ms-2">
+            <a href="CV - Fekih Yassine.pdf" download class="btn btn-primary btn-sm">
+              <i class="fa-solid fa-download"></i> CV
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section id="hero" class="d-flex align-items-center text-center">
+    <div class="container" data-aos="fade-up">
+      <img src="photo.jpeg" alt="Fekih Yassine" class="rounded-circle mb-4 hero-img">
+      <h1 class="fw-bold mb-2">Salut 👋 Je suis <span class="text-primary">Yassine Fekih</span></h1>
+      <p class="lead mb-4" style="color: var(--text-light);">Étudiant en Informatique & Développeur Web</p>
+      <div>
+        <a href="www.linkedin.com/in/yassine-fekih-1381a6352" target="_blank" class="social-icon"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/yassinefekih123" target="_blank" class="social-icon"><i class="fab fa-github"></i></a>
+        <a href="https://www.instagram.com/fekih__yassine/" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- À propos -->
+  <section id="about" class="py-5 bg-light">
+    <div class="container text-center" data-aos="fade-up">
+      <h2 class="fw-bold mb-4">À propos de moi</h2>
+      <p class="w-75 mx-auto" style="color: var(--text-light);">
+        Je suis étudiant en Informatique à l'ISET Tozeur 🎓 passionné par le développement web.
+        J'aime créer des interfaces modernes, des sites rapides et apprendre de nouvelles technologies.
+        Mon objectif est de devenir un développeur full-stack compétent 💻
+      </p>
+    </div>
+  </section>
+
+  <!-- Technologies -->
+  <section id="tech" class="py-5">
+    <div class="container text-center" data-aos="zoom-in">
+      <h2 class="fw-bold mb-4">🛠️ Technologies & Outils</h2>
+      <div class="tech-logos">
+        <div class="tech-logo" data-aos="flip-left" data-aos-delay="0">
+          <i class="fab fa-html5" style="color: #e34c26;"></i>
+        </div>
+        <div class="tech-logo" data-aos="flip-left" data-aos-delay="100">
+          <i class="fab fa-css3-alt" style="color: #264de4;"></i>
+        </div>
+        <div class="tech-logo" data-aos="flip-left" data-aos-delay="200">
+          <i class="fab fa-js" style="color: #f0db4f;"></i>
+        </div>
+        <div class="tech-logo" data-aos="flip-left" data-aos-delay="300">
+          <i class="fab fa-php" style="color: #8993be;"></i>
+        </div>
+        <div class="tech-logo" data-aos="flip-left" data-aos-delay="400">
+          <i class="fas fa-database" style="color: #00758f;"></i>
+        </div>
+        <div class="tech-logo" data-aos="flip-left" data-aos-delay="500">
+          <i class="fab fa-angular" style="color: #dd0031;"></i>
+        </div>
+        <div class="tech-logo" data-aos="flip-left" data-aos-delay="600">
+          <i class="fab fa-bootstrap" style="color: #563d7c;"></i>
+        </div>
+        <div class="tech-logo" data-aos="flip-left" data-aos-delay="700">
+          <i class="fab fa-git-alt" style="color: #f34f29;"></i>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Compétences -->
+  <section id="skills" class="py-5 bg-light">
+    <div class="container">
+      <h2 class="text-center fw-bold mb-5">💻 Mes Compétences</h2>
+      <div class="row g-4">
+        <div class="col-md-4" data-aos="fade-up">
+          <div class="skill-card text-center">
+            <i class="fa-solid fa-code"></i>
+            <h5 class="mt-3">Développement Web</h5>
+            <p style="color: var(--text-light);">Création de sites web modernes et responsives</p>
+          </div>
+        </div>
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+          <div class="skill-card text-center">
+            <i class="fa-solid fa-database"></i>
+            <h5 class="mt-3">Base de données</h5>
+            <p style="color: var(--text-light);">Gestion et optimisation de bases de données</p>
+          </div>
+        </div>
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+          <div class="skill-card text-center">
+            <i class="fa-solid fa-network-wired"></i>
+            <h5 class="mt-3">FTP & Serveurs</h5>
+            <p style="color: var(--text-light);">Configuration et maintenance de serveurs</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Timeline -->
+  <section id="timeline" class="py-5">
+    <div class="container">
+      <h2 class="text-center fw-bold mb-5">📜 Mon Parcours</h2>
+      <div class="timeline">
+        <div class="timeline-item" data-aos="fade-right">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <h5 style="color: var(--primary-color);">2024 - Baccalauréat Scientifique</h5>
+            <p style="color: var(--text-light);">Lycée Ali Bourguiba Benbla</p>
+          </div>
+        </div>
+        <div class="timeline-item" data-aos="fade-right" data-aos-delay="100">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <h5 style="color: var(--primary-color);">2024–2026 - Étudiant</h5>
+            <p style="color: var(--text-light);">ISET Tozeur – Informatique</p>
+          </div>
+        </div>
+        <div class="timeline-item" data-aos="fade-right" data-aos-delay="200">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <h5 style="color: var(--primary-color);">Janvier–Février 2025 - Stage</h5>
+            <p style="color: var(--text-light);">GSI Monastir – Développement Web</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="py-5">
+    <div class="container">
+      <h2 class="text-center fw-bold mb-5">📬 Contactez-moi</h2>
+      <form id="contactForm" action="https://formspree.io/f/mqazrppq" method="POST" class="w-75 mx-auto contact-card p-4" data-aos="fade-up">
+        <div class="mb-3">
+          <input type="text" name="name" class="form-control" placeholder="Votre nom" required>
+        </div>
+        <div class="mb-3">
+          <input type="email" name="email" class="form-control" placeholder="Votre email" required>
+        </div>
+        <div class="mb-3">
+          <textarea name="message" class="form-control" placeholder="Votre message..." rows="4" required></textarea>
+        </div>
+        <div class="text-center">
+          <button type="submit" class="btn btn-primary px-4">Envoyer</button>
+        </div>
+        <div id="form-status" class="mt-3 text-center"></div>
+      </form>
+    </div>
+  </section>
+
+  <footer class="text-center py-4 border-top">
+    © 2025 Fekih Yassine | Portfolio Professionnel
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 1000, once: true });
+
+    // Active link on scroll
+    const navLinks = document.querySelectorAll('.nav-link');
+    window.addEventListener('scroll', () => {
+      let fromTop = window.scrollY + 100;
+      navLinks.forEach(link => {
+        const section = document.querySelector(link.getAttribute('href'));
+        if (section && section.offsetTop <= fromTop && section.offsetTop + section.offsetHeight > fromTop) {
+          navLinks.forEach(l => l.classList.remove('active'));
+          link.classList.add('active');
+        }
+      });
+    });
+
+    // Preloader
+    window.addEventListener('load', () => {
+      document.getElementById('preloader').style.display = 'none';
+    });
+
+    // Contact form feedback
+    const form = document.getElementById('contactForm');
+    const statusDiv = document.getElementById('form-status');
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const data = new FormData(form);
+      const res = await fetch(form.action, {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      });
+      if (res.ok) {
+        statusDiv.textContent = "✅ Message envoyé avec succès !";
+        statusDiv.style.color = "#00d4ff";
+        form.reset();
+      } else {
+        statusDiv.textContent = "❌ Une erreur est survenue. Réessayez.";
+        statusDiv.style.color = "#ff4444";
+      }
+    });
+
+    // Navbar background on scroll
+    window.addEventListener('scroll', () => {
+      const navbar = document.querySelector('.navbar');
+      if (window.scrollY > 50) {
+        navbar.style.background = 'rgba(10, 14, 39, 0.98)';
+      } else {
+        navbar.style.background = 'rgba(10, 14, 39, 0.95)';
+      }
+    });
+  </script>
+</body>
+</html>
