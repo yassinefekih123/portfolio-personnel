@@ -675,6 +675,9 @@
         <div class="tech-logo" title="MySQL / PostgreSQL / SQLite" data-aos="flip-left" data-aos-delay="700">
           <i class="fas fa-database" style="color: #00a8d6;"></i>
         </div>
+        <div class="tech-logo" title="Docker" data-aos="flip-left" data-aos-delay="700">
+          <i class="fab fa-docker" style="color: #2496ed;"></i>
+        </div>
         <div class="tech-logo" title="Git" data-aos="flip-left" data-aos-delay="700">
           <i class="fab fa-git-alt" style="color: #f34f29;"></i>
         </div>
@@ -701,7 +704,7 @@
           <div class="skill-card text-center h-100">
             <i class="fa-solid fa-globe"></i>
             <h5 class="mt-3">Développement web</h5>
-            <div class="chips mt-3"><span class="chip">HTML5</span><span class="chip">CSS3</span><span class="chip">Bootstrap</span><span class="chip">Angular</span><span class="chip">Responsive Web Design</span></div>
+            <div class="chips mt-3"><span class="chip">HTML5</span><span class="chip">CSS3</span><span class="chip">Bootstrap</span><span class="chip">Angular</span><span class="chip">Next.js</span><span class="chip">Responsive Web Design</span></div>
           </div>
         </div>
         <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
@@ -709,6 +712,13 @@
             <i class="fa-solid fa-mobile-screen-button"></i>
             <h5 class="mt-3">Développement mobile</h5>
             <div class="chips mt-3"><span class="chip">Flutter</span><span class="chip">React Native</span><span class="chip">Expo</span><span class="chip">Kotlin</span><span class="chip">Android Studio</span><span class="chip">Firebase</span></div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+          <div class="skill-card text-center h-100">
+            <i class="fa-solid fa-server"></i>
+            <h5 class="mt-3">Backend et DevOps</h5>
+            <div class="chips mt-3"><span class="chip">Spring Boot</span><span class="chip">FastAPI</span><span class="chip">Docker</span><span class="chip">GitHub Actions</span></div>
           </div>
         </div>
         <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
@@ -733,37 +743,49 @@
   <section id="projects" class="py-5">
     <div class="container">
       <h2 class="text-center fw-bold mb-5">🚀 Projets</h2>
-      <div class="row g-4 justify-content-center">
+      <div class="row g-4">
         <div class="col-md-6" data-aos="fade-up" data-aos-delay="0">
           <div class="project-card">
-            <i class="fa-solid fa-prescription-bottle-medical"></i>
-            <h5 style="color: var(--primary-color);">Gestion de stock pharmaceutique</h5>
-            <div class="chips"><span class="chip">Python</span><span class="chip">Tkinter</span><span class="chip">SQLite</span></div>
-            <ul><li>Application desktop avec authentification et gestion des utilisateurs.</li><li>Gestion des produits, achats, ventes et stocks ; génération des factures.</li><li>Intégration d'une base de données SQLite.</li></ul>
+            <i class="fa-solid fa-mobile-screen"></i>
+            <h5 style="color: var(--primary-color);">Mobile Accessories Manager</h5>
+            <div class="chips"><span class="chip">Spring Boot</span><span class="chip">PostgreSQL</span><span class="chip">Redis</span><span class="chip">Next.js</span><span class="chip">Docker</span></div>
+            <ul><li>Application full-stack de gestion d'accessoires avec API REST sécurisée (JWT, Spring Security, rôles Admin / Client).</li><li>Pagination, tri, recherche et cache Redis ; documentation OpenAPI.</li><li>Environnement Docker Compose et intégration continue GitHub Actions (tests backend + Cypress).</li></ul>
+            <p class="mt-3 mb-0"><a href="https://github.com/yassinefekih123/projetintegration" target="_blank" rel="noopener"><i class="fab fa-github"></i> Voir le code</a></p>
           </div>
         </div>
         <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
           <div class="project-card">
             <i class="fa-solid fa-building"></i>
-            <h5 style="color: var(--primary-color);">Application mobile de gestion immobilière</h5>
-            <div class="chips"><span class="chip">React Native</span><span class="chip">Expo</span><span class="chip">Firebase</span></div>
-            <ul><li>Participation à une application mobile multiplateforme pour les services immobiliers.</li><li>Fonctionnalités mobiles en React Native et Expo ; Firebase (backend et données).</li></ul>
+            <h5 style="color: var(--primary-color);">Services Immobilier (projet d'équipe)</h5>
+            <div class="chips"><span class="chip">React Native</span><span class="chip">Expo</span><span class="chip">TypeScript</span><span class="chip">Firebase</span></div>
+            <ul><li>Participation à une application mobile d'annonces immobilières (vente et location) en équipe de 4.</li><li>Recherche, carte, messagerie et notifications ; Firebase pour le backend et les données.</li><li>Une version jumelle existe en Flutter.</li></ul>
+            <p class="mt-3 mb-0"><a href="https://github.com/mounawerzarai/services-immobilier-rn" target="_blank" rel="noopener"><i class="fab fa-github"></i> Version React Native</a> &nbsp;·&nbsp; <a href="https://github.com/mounawerzarai/services-immobilier-flutter" target="_blank" rel="noopener"><i class="fab fa-github"></i> Version Flutter</a></p>
           </div>
         </div>
         <div class="col-md-6" data-aos="fade-up" data-aos-delay="0">
           <div class="project-card">
             <i class="fa-solid fa-child-reaching"></i>
             <h5 style="color: var(--primary-color);">Application mobile « Ma Garderie »</h5>
-            <div class="chips"><span class="chip">Flutter</span><span class="chip">Dart</span><span class="chip">Git</span><span class="chip">GitHub</span></div>
-            <ul><li>Application Flutter : écran de démarrage, page d'accueil, liste d'éléments et interactions (Snackbar, Drawer).</li><li>Workflow Git : une branche par étape, fusionnée dans main ; README avec captures d'écran.</li></ul>
+            <div class="chips"><span class="chip">Flutter</span><span class="chip">Dart</span><span class="chip">Git</span></div>
+            <ul><li>Écran de démarrage, page d'accueil, liste d'activités, menu latéral et interactions.</li><li>Workflow Git : une branche par étape, fusionnée dans main ; README avec captures d'écran.</li></ul>
+            <p class="mt-3 mb-0"><a href="https://github.com/yassinefekih123/garderie-mobilee" target="_blank" rel="noopener"><i class="fab fa-github"></i> Voir le code</a></p>
+          </div>
+        </div>
+        <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+          <div class="project-card">
+            <i class="fa-solid fa-note-sticky"></i>
+            <h5 style="color: var(--primary-color);">Notes App multiplateforme</h5>
+            <div class="chips"><span class="chip">React Native</span><span class="chip">Expo</span><span class="chip">Flutter</span><span class="chip">Appwrite</span></div>
+            <ul><li>Inscription, connexion et gestion de notes (ajout, modification, suppression) enregistrées dans le cloud.</li><li>Chaque utilisateur ne voit que ses propres notes.</li><li>Réalisée en React Native et en Flutter.</li></ul>
+            <p class="mt-3 mb-0"><a href="https://github.com/yassinefekih123/notes-app-react-native" target="_blank" rel="noopener"><i class="fab fa-github"></i> React Native</a> &nbsp;·&nbsp; <a href="https://github.com/yassinefekih123/notes_app" target="_blank" rel="noopener"><i class="fab fa-github"></i> Flutter</a></p>
           </div>
         </div>
         <div class="col-md-6" data-aos="fade-up" data-aos-delay="0">
           <div class="project-card">
-            <i class="fa-solid fa-users-gear"></i>
-            <h5 style="color: var(--primary-color);">Gestion des clients et des interventions</h5>
-            <div class="chips"><span class="chip">PHP</span><span class="chip">MySQL</span><span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">JavaScript</span></div>
-            <ul><li>Projet réalisé lors du stage de perfectionnement chez GSI Informatique (2026).</li><li>Base MySQL (utilisateurs, clients, interventions) et fonctionnalités de gestion.</li></ul>
+            <i class="fa-solid fa-prescription-bottle-medical"></i>
+            <h5 style="color: var(--primary-color);">Gestion de stock pharmaceutique</h5>
+            <div class="chips"><span class="chip">Python</span><span class="chip">Tkinter</span><span class="chip">SQLite</span></div>
+            <ul><li>Application desktop avec authentification et gestion des utilisateurs.</li><li>Gestion des produits, achats, ventes et stocks ; génération des factures.</li></ul>
           </div>
         </div>
         <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
