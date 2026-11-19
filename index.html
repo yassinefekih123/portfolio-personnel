@@ -3,11 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio - Fekih Yassine</title>
+  <title>Portfolio - Yassine Fekih</title>
 
   <!-- SEO -->
-  <meta name="description" content="Portfolio professionnel de Fekih Yassine - Étudiant en Informatique et Développeur Web.">
-  <meta name="author" content="Fekih Yassine">
+  <meta name="description" content="Portfolio de Yassine Fekih - Étudiant en 3ème année Technologies de l'Informatique (DSI) à l'ISET Tozeur. Développement web, mobile et génie logiciel. Recherche un stage.">
+  <meta name="author" content="Yassine Fekih">
+  <link rel="icon" href="favicon.png">
 
   <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -450,6 +451,83 @@
       color: var(--text-light) !important;
     }
 
+    /* Hero badge */
+    .hero-badge {
+      display: inline-block;
+      padding: 0.45rem 1.1rem;
+      border-radius: 50px;
+      background: rgba(0, 212, 255, 0.1);
+      border: 1px solid rgba(0, 212, 255, 0.4);
+      color: var(--primary-color);
+      font-size: 0.95rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-img { object-position: center 20%; }
+
+    /* Chips */
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      justify-content: center;
+    }
+
+    .chip {
+      padding: 0.3rem 0.85rem;
+      border-radius: 50px;
+      background: rgba(0, 212, 255, 0.08);
+      border: 1px solid rgba(0, 212, 255, 0.25);
+      font-size: 0.85rem;
+      color: var(--text-light);
+    }
+
+    .skill-card h5 { color: var(--primary-color); }
+
+    /* Project cards */
+    .project-card {
+      background: var(--card-bg);
+      padding: 1.8rem;
+      border-radius: 15px;
+      height: 100%;
+      border: 2px solid rgba(0, 212, 255, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-8px);
+      border-color: var(--primary-color);
+      box-shadow: 0 10px 40px rgba(0, 212, 255, 0.3);
+    }
+
+    .project-card > i {
+      font-size: 2rem;
+      color: var(--primary-color);
+      margin-bottom: 1rem;
+    }
+
+    .project-card ul {
+      text-align: left;
+      padding-left: 1.2rem;
+      margin: 1rem 0 0;
+      font-size: 0.95rem;
+    }
+
+    .project-card .chips { margin-top: 1rem; justify-content: flex-start; }
+
+    .project-card a { color: var(--primary-color); }
+
+    /* Contact info */
+    .contact-info a {
+      color: var(--text-light);
+      text-decoration: none;
+      margin: 0 1rem;
+      display: inline-block;
+    }
+
+    .contact-info a:hover { color: var(--primary-color); }
+    .contact-info i { color: var(--primary-color); margin-right: 0.4rem; }
+
     /* Responsive */
     @media (max-width: 768px) {
       #hero h1 { font-size: 2rem; }
@@ -487,6 +565,7 @@
           <li class="nav-item"><a class="nav-link active" href="#hero">Accueil</a></li>
           <li class="nav-item"><a class="nav-link" href="#about">À propos</a></li>
           <li class="nav-item"><a class="nav-link" href="#skills">Compétences</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">Projets</a></li>
           <li class="nav-item"><a class="nav-link" href="#timeline">Parcours</a></li>
           <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
           <li class="nav-item ms-2">
@@ -502,13 +581,15 @@
   <!-- Hero -->
   <section id="hero" class="d-flex align-items-center text-center">
     <div class="container" data-aos="fade-up">
-      <img src="photo.jpeg" alt="Fekih Yassine" class="rounded-circle mb-4 hero-img">
+      <img src="photo.jpeg" alt="Yassine Fekih" class="rounded-circle mb-4 hero-img">
       <h1 class="fw-bold mb-2">Salut 👋 Je suis <span class="text-primary">Yassine Fekih</span></h1>
-      <p class="lead mb-4" style="color: var(--text-light);">Étudiant en Informatique & Développeur Web</p>
+      <p class="lead mb-3" style="color: var(--text-light);">Étudiant en 3<sup>ème</sup> année – Technologies de l'Informatique (DSI)</p>
+      <span class="hero-badge">Recherche un stage · Développement web, mobile et génie logiciel</span>
       <div>
-        <a href="www.linkedin.com/in/yassine-fekih-1381a6352" target="_blank" class="social-icon"><i class="fab fa-linkedin"></i></a>
-        <a href="https://github.com/yassinefekih123" target="_blank" class="social-icon"><i class="fab fa-github"></i></a>
-        <a href="https://www.instagram.com/fekih__yassine/" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.linkedin.com/in/yassine-fekih-1381a6352" target="_blank" rel="noopener" class="social-icon" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/yassinefekih123" target="_blank" rel="noopener" class="social-icon" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="mailto:yassinefekih03@gmail.com" class="social-icon" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+        <a href="https://www.instagram.com/fekih__yassine/" target="_blank" rel="noopener" class="social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
       </div>
     </div>
   </section>
@@ -518,10 +599,19 @@
     <div class="container text-center" data-aos="fade-up">
       <h2 class="fw-bold mb-4">À propos de moi</h2>
       <p class="w-75 mx-auto" style="color: var(--text-light);">
-        Je suis étudiant en Informatique à l'ISET Tozeur 🎓 passionné par le développement web.
-        J'aime créer des interfaces modernes, des sites rapides et apprendre de nouvelles technologies.
-        Mon objectif est de devenir un développeur full-stack compétent 💻
+        Étudiant en 3<sup>ème</sup> année en Technologies de l'Informatique à l'ISET de Tozeur (DSI) 🎓,
+        je m'intéresse au développement web et mobile multiplateforme, au génie logiciel et aux bases de données.
+        Motivé à développer mes compétences techniques, acquérir de nouvelles expériences et contribuer
+        à des projets concrets au sein d'une équipe 💻
       </p>
+      <div class="mt-4">
+        <span class="text-muted-light" style="color: var(--text-light);">Langues :</span>
+        <div class="chips mt-2">
+          <span class="chip">Arabe · Langue maternelle</span>
+          <span class="chip">Français · Courant</span>
+          <span class="chip">Anglais · Courant</span>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -530,29 +620,47 @@
     <div class="container text-center" data-aos="zoom-in">
       <h2 class="fw-bold mb-4">🛠️ Technologies & Outils</h2>
       <div class="tech-logos">
-        <div class="tech-logo" data-aos="flip-left" data-aos-delay="0">
+        <div class="tech-logo" title="HTML5" data-aos="flip-left" data-aos-delay="0">
           <i class="fab fa-html5" style="color: #e34c26;"></i>
         </div>
-        <div class="tech-logo" data-aos="flip-left" data-aos-delay="100">
+        <div class="tech-logo" title="CSS3" data-aos="flip-left" data-aos-delay="100">
           <i class="fab fa-css3-alt" style="color: #264de4;"></i>
         </div>
-        <div class="tech-logo" data-aos="flip-left" data-aos-delay="200">
+        <div class="tech-logo" title="JavaScript" data-aos="flip-left" data-aos-delay="200">
           <i class="fab fa-js" style="color: #f0db4f;"></i>
         </div>
-        <div class="tech-logo" data-aos="flip-left" data-aos-delay="300">
+        <div class="tech-logo" title="PHP" data-aos="flip-left" data-aos-delay="300">
           <i class="fab fa-php" style="color: #8993be;"></i>
         </div>
-        <div class="tech-logo" data-aos="flip-left" data-aos-delay="400">
-          <i class="fas fa-database" style="color: #00758f;"></i>
+        <div class="tech-logo" title="Python" data-aos="flip-left" data-aos-delay="400">
+          <i class="fab fa-python" style="color: #4b8bbe;"></i>
         </div>
-        <div class="tech-logo" data-aos="flip-left" data-aos-delay="500">
+        <div class="tech-logo" title="Java" data-aos="flip-left" data-aos-delay="500">
+          <i class="fab fa-java" style="color: #f89820;"></i>
+        </div>
+        <div class="tech-logo" title="Angular" data-aos="flip-left" data-aos-delay="600">
           <i class="fab fa-angular" style="color: #dd0031;"></i>
         </div>
-        <div class="tech-logo" data-aos="flip-left" data-aos-delay="600">
-          <i class="fab fa-bootstrap" style="color: #563d7c;"></i>
+        <div class="tech-logo" title="Bootstrap" data-aos="flip-left" data-aos-delay="700">
+          <i class="fab fa-bootstrap" style="color: #9b6ff3;"></i>
         </div>
-        <div class="tech-logo" data-aos="flip-left" data-aos-delay="700">
+        <div class="tech-logo" title="React Native" data-aos="flip-left" data-aos-delay="700">
+          <i class="fab fa-react" style="color: #61dafb;"></i>
+        </div>
+        <div class="tech-logo" title="Android / Kotlin" data-aos="flip-left" data-aos-delay="700">
+          <i class="fab fa-android" style="color: #3ddc84;"></i>
+        </div>
+        <div class="tech-logo" title="Firebase" data-aos="flip-left" data-aos-delay="700">
+          <i class="fa-solid fa-fire" style="color: #ffca28;"></i>
+        </div>
+        <div class="tech-logo" title="MySQL / PostgreSQL / SQLite" data-aos="flip-left" data-aos-delay="700">
+          <i class="fas fa-database" style="color: #00a8d6;"></i>
+        </div>
+        <div class="tech-logo" title="Git" data-aos="flip-left" data-aos-delay="700">
           <i class="fab fa-git-alt" style="color: #f34f29;"></i>
+        </div>
+        <div class="tech-logo" title="GitHub" data-aos="flip-left" data-aos-delay="700">
+          <i class="fab fa-github" style="color: #e0e6ed;"></i>
         </div>
       </div>
     </div>
@@ -562,26 +670,82 @@
   <section id="skills" class="py-5 bg-light">
     <div class="container">
       <h2 class="text-center fw-bold mb-5">💻 Mes Compétences</h2>
-      <div class="row g-4">
-        <div class="col-md-4" data-aos="fade-up">
-          <div class="skill-card text-center">
+      <div class="row g-4 justify-content-center">
+        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="0">
+          <div class="skill-card text-center h-100">
             <i class="fa-solid fa-code"></i>
-            <h5 class="mt-3">Développement Web</h5>
-            <p style="color: var(--text-light);">Création de sites web modernes et responsives</p>
+            <h5 class="mt-3">Langages de programmation</h5>
+            <div class="chips mt-3"><span class="chip">Python</span><span class="chip">Java</span><span class="chip">Kotlin</span><span class="chip">JavaScript</span><span class="chip">PHP</span><span class="chip">Dart</span></div>
           </div>
         </div>
-        <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
-          <div class="skill-card text-center">
+        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+          <div class="skill-card text-center h-100">
+            <i class="fa-solid fa-globe"></i>
+            <h5 class="mt-3">Développement web</h5>
+            <div class="chips mt-3"><span class="chip">HTML5</span><span class="chip">CSS3</span><span class="chip">Bootstrap</span><span class="chip">Angular</span><span class="chip">Responsive Web Design</span></div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+          <div class="skill-card text-center h-100">
+            <i class="fa-solid fa-mobile-screen-button"></i>
+            <h5 class="mt-3">Développement mobile</h5>
+            <div class="chips mt-3"><span class="chip">Flutter</span><span class="chip">React Native</span><span class="chip">Expo</span><span class="chip">Kotlin</span><span class="chip">Android Studio</span><span class="chip">Firebase</span></div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+          <div class="skill-card text-center h-100">
             <i class="fa-solid fa-database"></i>
-            <h5 class="mt-3">Base de données</h5>
-            <p style="color: var(--text-light);">Gestion et optimisation de bases de données</p>
+            <h5 class="mt-3">Bases de données</h5>
+            <div class="chips mt-3"><span class="chip">MySQL</span><span class="chip">PostgreSQL</span><span class="chip">SQLite</span><span class="chip">SQL</span><span class="chip">Conception et gestion de bases de données</span></div>
           </div>
         </div>
-        <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-          <div class="skill-card text-center">
-            <i class="fa-solid fa-network-wired"></i>
-            <h5 class="mt-3">FTP & Serveurs</h5>
-            <p style="color: var(--text-light);">Configuration et maintenance de serveurs</p>
+        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="400">
+          <div class="skill-card text-center h-100">
+            <i class="fa-solid fa-screwdriver-wrench"></i>
+            <h5 class="mt-3">Outils et environnements</h5>
+            <div class="chips mt-3"><span class="chip">Git</span><span class="chip">GitHub</span><span class="chip">Visual Studio Code</span><span class="chip">Android Studio</span><span class="chip">XAMPP</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projets -->
+  <section id="projects" class="py-5">
+    <div class="container">
+      <h2 class="text-center fw-bold mb-5">🚀 Projets</h2>
+      <div class="row g-4">
+        <div class="col-md-6" data-aos="fade-up" data-aos-delay="0">
+          <div class="project-card">
+            <i class="fa-solid fa-prescription-bottle-medical"></i>
+            <h5 style="color: var(--primary-color);">Gestion de stock pharmaceutique</h5>
+            <div class="chips"><span class="chip">Python</span><span class="chip">Tkinter</span><span class="chip">SQLite</span></div>
+            <ul><li>Application desktop avec authentification et gestion des utilisateurs.</li><li>Gestion des produits, achats, ventes et stocks ; génération des factures.</li><li>Intégration d'une base de données SQLite.</li></ul>
+          </div>
+        </div>
+        <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+          <div class="project-card">
+            <i class="fa-solid fa-building"></i>
+            <h5 style="color: var(--primary-color);">Application mobile de gestion immobilière</h5>
+            <div class="chips"><span class="chip">React Native</span><span class="chip">Expo</span><span class="chip">Firebase</span></div>
+            <ul><li>Participation à une application mobile multiplateforme pour les services immobiliers.</li><li>Fonctionnalités mobiles en React Native et Expo ; Firebase (backend et données).</li></ul>
+          </div>
+        </div>
+        <div class="col-md-6" data-aos="fade-up" data-aos-delay="0">
+          <div class="project-card">
+            <i class="fa-solid fa-users-gear"></i>
+            <h5 style="color: var(--primary-color);">Gestion des clients et des interventions</h5>
+            <div class="chips"><span class="chip">PHP</span><span class="chip">MySQL</span><span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">JavaScript</span></div>
+            <ul><li>Projet réalisé lors du stage de perfectionnement chez GSI Informatique (2026).</li><li>Base MySQL (utilisateurs, clients, interventions) et fonctionnalités de gestion.</li></ul>
+          </div>
+        </div>
+        <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+          <div class="project-card">
+            <i class="fa-solid fa-address-card"></i>
+            <h5 style="color: var(--primary-color);">Portfolio personnel</h5>
+            <div class="chips"><span class="chip">HTML5</span><span class="chip">CSS3</span><span class="chip">JavaScript</span><span class="chip">GitHub Pages</span></div>
+            <ul><li>Présentation de mon parcours, mes compétences et mes projets.</li><li>Déployé sur GitHub Pages.</li></ul>
+            <p class="mt-3 mb-0"><a href="https://github.com/yassinefekih123/portfolio-personnel" target="_blank" rel="noopener"><i class="fab fa-github"></i> Voir le code</a></p>
           </div>
         </div>
       </div>
@@ -603,15 +767,22 @@
         <div class="timeline-item" data-aos="fade-right" data-aos-delay="100">
           <div class="timeline-dot"></div>
           <div class="timeline-content">
-            <h5 style="color: var(--primary-color);">2024–2026 - Étudiant</h5>
-            <p style="color: var(--text-light);">ISET Tozeur – Informatique</p>
+            <h5 style="color: var(--primary-color);">2024–2026 - Développement des Systèmes Informatiques (DSI)</h5>
+            <p style="color: var(--text-light);">ISET Tozeur – Département Technologies de l'Informatique · 3<sup>ème</sup> année DSI31</p>
           </div>
         </div>
         <div class="timeline-item" data-aos="fade-right" data-aos-delay="200">
           <div class="timeline-dot"></div>
           <div class="timeline-content">
-            <h5 style="color: var(--primary-color);">Janvier–Février 2025 - Stage</h5>
-            <p style="color: var(--text-light);">GSI Monastir – Développement Web</p>
+            <h5 style="color: var(--primary-color);">Janvier–Février 2025 - Stage d'initiation</h5>
+            <p style="color: var(--text-light);">GSI Informatique · 1 mois – Première immersion dans le milieu professionnel informatique.</p>
+          </div>
+        </div>
+        <div class="timeline-item" data-aos="fade-right" data-aos-delay="300">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <h5 style="color: var(--primary-color);">Janvier–Février 2026 - Stage de perfectionnement</h5>
+            <p style="color: var(--text-light);">GSI Informatique · 1 mois – Application web de gestion des clients et des interventions (PHP, MySQL, HTML, CSS, JavaScript).</p>
           </div>
         </div>
       </div>
@@ -621,7 +792,12 @@
   <!-- Contact -->
   <section id="contact" class="py-5">
     <div class="container">
-      <h2 class="text-center fw-bold mb-5">📬 Contactez-moi</h2>
+      <h2 class="text-center fw-bold mb-4">📬 Contactez-moi</h2>
+      <p class="text-center contact-info mb-4">
+        <a href="mailto:yassinefekih03@gmail.com"><i class="fa-solid fa-envelope"></i>yassinefekih03@gmail.com</a>
+        <a href="tel:+21624544632"><i class="fa-solid fa-phone"></i>24 544 632</a>
+        <span style="margin: 0 1rem;"><i class="fa-solid fa-location-dot" style="color: var(--primary-color); margin-right: .4rem;"></i>Tunisie</span>
+      </p>
       <form id="contactForm" action="https://formspree.io/f/mqazrppq" method="POST" class="w-75 mx-auto contact-card p-4" data-aos="fade-up">
         <div class="mb-3">
           <input type="text" name="name" class="form-control" placeholder="Votre nom" required>
@@ -641,7 +817,7 @@
   </section>
 
   <footer class="text-center py-4 border-top">
-    © 2025 Fekih Yassine | Portfolio Professionnel
+    © 2026 Yassine Fekih | Portfolio Professionnel
   </footer>
 
   <!-- Scripts -->
